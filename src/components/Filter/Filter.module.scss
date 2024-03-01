@@ -1,0 +1,19 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  margin: 44px 0 0 20px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    gap: 68px;
+  }
+
+  &__input {
+    width: 313px;
+    height: 64px;
+  }
+}
