@@ -1,5 +1,9 @@
+@import url(https://db.onlinewebfonts.com/c/dcd470f69035d68d8d0aba8ed7ba9d6d?family=YS+Display+Regular+Regular);
 .App {
   text-align: center;
+  background-color: #1a1b22;
+  height: 100vh;
+  font-family: "Ys Display";
 }
 
 .App-logo {
