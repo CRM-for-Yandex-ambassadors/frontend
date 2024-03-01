@@ -10,14 +10,14 @@ export const navbarMenuList: NavbarMenuListItem[] = [
   },
   {
     label: 'Отправка',
-    link: '/',
+    link: '/sending',
   },
   {
     label: 'Бюджет',
-    link: '/',
+    link: '/budget',
   },
   {
     label: 'Аналитика',
-    link: '/',
+    link: '/analitics',
   },
 ];

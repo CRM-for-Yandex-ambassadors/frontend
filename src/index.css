@@ -8,5 +8,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  color: #1A1B22;
+  color: #1a1b22;
+}
+
+.page {
+  width: 1440px;
+  display: flex;
+  flex-direction: row;
 }

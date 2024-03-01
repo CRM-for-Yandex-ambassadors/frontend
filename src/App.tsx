@@ -1,16 +1,24 @@
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
-import ProtectedRoute from './pages/ProtectedRoute/ProtectedRoute';
 import Login from './pages/Login/Login';
+import Main from './pages/Main/Main';
+import Navbar from './components/Navbar/Navbar';
+import './index.css';
+import Sending from './pages/Sending/Sending';
+import Budget from './pages/Budget/Budget';
+import Analitics from './pages/Analitics/Analitics';
 
 function App() {
   return (
-    <BrowserRouter>
+    <div className="page">
+      <Navbar />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<ProtectedRoute />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/sending" element={<Sending />} />
+        <Route path="/budget" element={<Budget />} />
+        <Route path="/analitics" element={<Analitics />} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 
