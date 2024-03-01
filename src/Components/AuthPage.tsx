@@ -12,6 +12,7 @@ import leftTriangle from "../Images/left_triangle.svg";
 import topCircle from "../Images/top_circle.svg";
 import bottomRectangle from "../Images/bottom_rectangle.svg";
 import { InputLabel } from "@mui/material";
+import api from "./Api";
 import "./AuthPage.css";
 
 function AuthPage() {
@@ -33,6 +34,10 @@ function AuthPage() {
       setErrorText("Ошибка");
     } else {
       console.log({ login: login, password: password });
+      api.loginUser({ login: login, password: password }).catch((err) => {
+        console.log(err);
+        setErrorText(err);
+      });
     }
   }
   /*   const theme = createTheme({
