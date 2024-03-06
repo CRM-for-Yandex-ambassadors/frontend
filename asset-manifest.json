@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/y-lab-task-3/static/css/main.418733b2.css",
+    "main.js": "/y-lab-task-3/static/js/main.7fc4fa9d.js",
+    "static/media/TrashIcon.svg": "/y-lab-task-3/static/media/TrashIcon.77ad2f8e9e2273fb4d3c2e6d21f2450d.svg",
+    "static/media/Badge_ball.svg": "/y-lab-task-3/static/media/Badge_ball.3d842d6c9847e5100fb29c02124e9288.svg",
+    "static/media/SearchIcon.svg": "/y-lab-task-3/static/media/SearchIcon.b6d134bf9f466099993e167f0721f21e.svg",
+    "static/media/arrowDown.svg": "/y-lab-task-3/static/media/arrowDown.e00531614f24b411c802b3a321ab10c2.svg",
+    "static/media/arrowUp.svg": "/y-lab-task-3/static/media/arrowUp.d24ea3b0e7e324b065ed8912ec27abb3.svg",
+    "static/media/Yandex_znak 1.svg": "/y-lab-task-3/static/media/Yandex_znak 1.57b01bcef05233fbf8f8372ef960aacb.svg",
+    "index.html": "/y-lab-task-3/index.html",
+    "static/media/top_circle.svg": "/y-lab-task-3/static/media/top_circle.34f624c4db0f408e4d27e79ca38576a9.svg",
+    "static/media/bottom_rectangle.svg": "/y-lab-task-3/static/media/bottom_rectangle.d511eacf94625e3c8a3098686e77b729.svg",
+    "static/media/left_triangle.svg": "/y-lab-task-3/static/media/left_triangle.3bfa80f17f5f54b08e4207376a2140cf.svg",
+    "main.418733b2.css.map": "/y-lab-task-3/static/css/main.418733b2.css.map",
+    "main.7fc4fa9d.js.map": "/y-lab-task-3/static/js/main.7fc4fa9d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.418733b2.css",
+    "static/js/main.7fc4fa9d.js"
+  ]
+}
