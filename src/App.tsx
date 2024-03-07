@@ -24,6 +24,7 @@ function App() {
       dispatch(setUser(currentUser));
       setApp(true);
     }
+    // setApp(true);
   }, [isSuccess]); // eslint-disable-line
 
   return (
