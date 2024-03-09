@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.3ca6c4d8.css",
-    "main.js": "/frontend/static/js/main.c754eb70.js",
+    "main.css": "/frontend/static/css/main.4a4a22b5.css",
+    "main.js": "/frontend/static/js/main.6b31ebce.js",
     "static/media/TrashIcon.svg": "/frontend/static/media/TrashIcon.77ad2f8e9e2273fb4d3c2e6d21f2450d.svg",
     "static/media/Badge_ball.svg": "/frontend/static/media/Badge_ball.3d842d6c9847e5100fb29c02124e9288.svg",
     "static/media/SearchIcon.svg": "/frontend/static/media/SearchIcon.b6d134bf9f466099993e167f0721f21e.svg",
+    "static/media/Exit.svg": "/frontend/static/media/Exit.f8f5bedf2d452414240b07e2d376da74.svg",
     "static/media/arrowDown.svg": "/frontend/static/media/arrowDown.e00531614f24b411c802b3a321ab10c2.svg",
     "static/media/arrowUp.svg": "/frontend/static/media/arrowUp.d24ea3b0e7e324b065ed8912ec27abb3.svg",
     "static/media/Yandex_znak 1.svg": "/frontend/static/media/Yandex_znak 1.57b01bcef05233fbf8f8372ef960aacb.svg",
@@ -12,11 +13,11 @@
     "static/media/top_circle.svg": "/frontend/static/media/top_circle.34f624c4db0f408e4d27e79ca38576a9.svg",
     "static/media/bottom_rectangle.svg": "/frontend/static/media/bottom_rectangle.d511eacf94625e3c8a3098686e77b729.svg",
     "static/media/left_triangle.svg": "/frontend/static/media/left_triangle.3bfa80f17f5f54b08e4207376a2140cf.svg",
-    "main.3ca6c4d8.css.map": "/frontend/static/css/main.3ca6c4d8.css.map",
-    "main.c754eb70.js.map": "/frontend/static/js/main.c754eb70.js.map"
+    "main.4a4a22b5.css.map": "/frontend/static/css/main.4a4a22b5.css.map",
+    "main.6b31ebce.js.map": "/frontend/static/js/main.6b31ebce.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ca6c4d8.css",
-    "static/js/main.c754eb70.js"
+    "static/css/main.4a4a22b5.css",
+    "static/js/main.6b31ebce.js"
   ]
 }
