@@ -2,13 +2,12 @@ import clsx from 'clsx';
 import Table from '@mui/joy/Table';
 import TableButtons from './TableButtons/TableButtons';
 import styles from './TableMain.module.scss';
-import { TableData } from './types';
+import { useAppSelector } from '../../redux/store';
+import { ambassadorsListSelector } from '../../redux/slices/ambassadorsSlice';
+import { TableMainPropsType } from './types';
 
-type PropsType = {
-  data: TableData;
-};
-
-export default function TableMain({ data }: PropsType) {
+export default function TableMain({ onProfile }: TableMainPropsType) {
+  const data = useAppSelector(ambassadorsListSelector);
   return (
     <div className={styles.table}>
       <Table
@@ -21,10 +20,11 @@ export default function TableMain({ data }: PropsType) {
       >
         <thead>
           <tr>
-            <th style={{ width: '16px' }}>№</th>
+            <th style={{ width: '16px', textAlign: 'center' }}>№</th>
             <th>
               <div className={styles.table__cell}>
-                ФИО <TableButtons />
+                ФИО
+                <TableButtons />
               </div>
             </th>
             <th>Телеграмм</th>
@@ -33,12 +33,14 @@ export default function TableMain({ data }: PropsType) {
             <th style={{ width: '44px' }}>Курс</th>
             <th>
               <div className={styles.table__cell}>
-                Дата регистр <TableButtons />
+                Дата регистр
+                <TableButtons />
               </div>
             </th>
             <th>
               <div className={styles.table__cell}>
-                Статус <TableButtons />
+                Статус
+                <TableButtons />
               </div>
             </th>
             <th>Гайд 1</th>
@@ -51,16 +53,16 @@ export default function TableMain({ data }: PropsType) {
           {data.map((row) => (
             <tr key={row.id}>
               <td>{row.id}</td>
-              <td>{row.name}</td>
+              <td>{row.fio}</td>
               <td>
                 <a className={styles.table__link} href="#text-ellipsis">
-                  {row.telegramm}
+                  {row.telegram}
                 </a>
               </td>
               <td>{row.promo}</td>
               <td>{row.city}</td>
               <td>{row.course}</td>
-              <td>{row.register}</td>
+              <td>{row.registrationDate}</td>
               <td>
                 <div
                   className={clsx(
@@ -77,39 +79,43 @@ export default function TableMain({ data }: PropsType) {
                 <div
                   className={clsx(
                     styles.wrapper,
-                    row.gaidOne === 'Да' && styles.wrapper_positive,
-                    row.gaidOne === 'Нет' && styles.wrapper_negative
+                    row.guideOneInfo === 'Да' && styles.wrapper_positive,
+                    row.guideOneInfo === 'Нет' && styles.wrapper_negative
                   )}
                 >
-                  {row.gaidOne}
+                  {row.guideOneInfo}
                 </div>
               </td>
               <td>
                 <div
                   className={clsx(
                     styles.wrapper,
-                    row.gaidTwo === 'Да' && styles.wrapper_positive,
-                    row.gaidTwo === 'Нет' && styles.wrapper_negative
+                    row.guideTwoInfo === 'Да' && styles.wrapper_positive,
+                    row.guideTwoInfo === 'Нет' && styles.wrapper_negative
                   )}
                 >
-                  {row.gaidTwo}
+                  {row.guideTwoInfo}
                 </div>
               </td>
               <td>
                 <div
                   className={clsx(
                     styles.wrapper,
-                    row.onboarding === 'Прошёл' && styles.wrapper_positive,
-                    row.onboarding === 'Не прошёл' && styles.wrapper_negative
+                    row.onboardingInfo === 'Прошёл' && styles.wrapper_positive,
+                    row.onboardingInfo === 'Не прошёл' &&
+                      styles.wrapper_negative
                   )}
                 >
-                  {row.onboarding}
+                  {row.onboardingInfo}
                 </div>
               </td>
               <td>
-                <a className={styles.table__link} href="#text-ellipsis">
-                  {row.profile}
-                </a>
+                <button
+                  className={styles.table__profile}
+                  onClick={() => onProfile(`${row.id}`)}
+                >
+                  Профаил
+                </button>
               </td>
             </tr>
           ))}

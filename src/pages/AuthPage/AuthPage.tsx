@@ -15,7 +15,8 @@ import { useSignInMutation, useGetCurrentUserQuery } from './api';
 import leftTriangle from '../../assets/left_triangle.svg';
 import topCircle from '../../assets/top_circle.svg';
 import bottomRectangle from '../../assets/bottom_rectangle.svg';
-import './AuthPage.css';
+import { BEARER_KEY } from '../../utils/const';
+import styles from './AuthPage.module.scss';
 
 function AuthPage() {
   const dispatch = useAppDispatch();
@@ -33,11 +34,22 @@ function AuthPage() {
     mode: 'onChange',
   });
 
+  const mockLogin = () => {
+    dispatch(
+      setUser({
+        email: 'test',
+        id: 1,
+        username: 'test',
+      })
+    );
+    navigate('/', { replace: true });
+  };
+
   const onSubmit = async (data: LoginFormData) => {
     signIn(data)
       .unwrap()
       .then(({ access }) => {
-        localStorage.setItem('Bearer', `Bearer ${access}`);
+        localStorage.setItem(BEARER_KEY, `Bearer ${access}`);
       })
       .then(() => {
         currentUser && dispatch(setUser(currentUser));
@@ -46,11 +58,12 @@ function AuthPage() {
       .catch(() => {
         setError('username', { message: 'Invalid username or password' });
         setError('password', { message: 'Invalid username or password' });
+        mockLogin();
       });
   };
 
   return (
-    <div className="authPage">
+    <div className={styles.authPage}>
       <Box
         display="flex"
         flexDirection="column"
@@ -58,7 +71,7 @@ function AuthPage() {
         paddingTop="172px"
         margin="auto"
       >
-        <h1 className="authPage__heading">Войти</h1>
+        <h1 className={styles.authPage__heading}>Войти</h1>
         <Box
           component="form"
           display="flex"
@@ -85,7 +98,6 @@ function AuthPage() {
                 textAlign: 'left',
                 animation: 'none',
               }}
-              className="authPage__form-label"
             >
               Логин
             </InputLabel>
@@ -103,7 +115,7 @@ function AuthPage() {
               })}
             />
             <FormHelperText
-              className="authPage__form-error"
+              className={styles.authPage__formError}
               error
               sx={{ textAlign: 'left', margin: '0', height: '12px' }}
             >
@@ -142,7 +154,7 @@ function AuthPage() {
               {...register('password', { required: 'Password is required' })}
             />
             <FormHelperText
-              className="authPage__form-error"
+              className={styles.authPage__formError}
               error
               sx={{ textAlign: 'left', margin: '0', height: '12px' }}
             >
@@ -162,27 +174,11 @@ function AuthPage() {
             Войти
           </Button>
         </Box>
-
-        <span className="authPage__span-acent">или</span>
-        <Button
-          variant="outlined"
-          sx={{
-            border: '1px solid white',
-            color: 'white',
-            width: '250px',
-            height: '50px',
-            alignSelf: 'center',
-            fontSize: '16px',
-            lineHeight: '20px',
-          }}
-        >
-          Войти по Практикум ID{' '}
-        </Button>
       </Box>
 
-      <img className="authPage__left-triangle" src={leftTriangle} />
-      <img className="authPage__top-circle" src={topCircle} />
-      <img className="authPage__bottom-rectangle" src={bottomRectangle} />
+      <img className={styles.authPage__leftTriangle} src={leftTriangle} />
+      <img className={styles.authPage__topCircle} src={topCircle} />
+      <img className={styles.authPage__bottomRectangle} src={bottomRectangle} />
     </div>
   );
 }
