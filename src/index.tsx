@@ -5,7 +5,7 @@ import store from './redux/store';
 import App from './App';
 import './index.css';
 
-async function deferRender() {
+async function enableMocking() {
   const { worker } = await import('./mocks/browser');
   return worker.start();
 }
@@ -13,7 +13,7 @@ async function deferRender() {
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
-deferRender().then(() => {
+enableMocking().then(() => {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
